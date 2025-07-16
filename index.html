@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Spider Digi Yatra - Free Digital Marketing Classes</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="images/logo.png">
     <link
         href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@300;400;500;600;700;800&display=swap"
         rel="stylesheet">
@@ -19,11 +20,18 @@
                         'poppins': ['Poppins', 'sans-serif'],
                     },
                     colors: {
-                        'primary': '#6366f1',
-                        'secondary': '#8b5cf6',
-                        'accent': '#06b6d4',
-                        'dark': '#0f172a',
-                        'light': '#f8fafc',
+                        'primary': '#dc2626', // Red-600
+                        'primary-dark': '#b91c1c', // Red-700
+                        'primary-light': '#ef4444', // Red-500
+                        'secondary': '#1f2937', // Gray-800 (Dark)
+                        'secondary-light': '#374151', // Gray-700
+                        'accent': '#f59e0b', // Amber-500
+                        'dark': '#0f172a', // Slate-900
+                        'light': '#f8fafc', // Slate-50
+                        'red-gradient-start': '#dc2626',
+                        'red-gradient-end': '#7f1d1d',
+                        'black-gradient-start': '#1f2937',
+                        'black-gradient-end': '#111827',
                     },
                     animation: {
                         'float': 'float 6s ease-in-out infinite',
@@ -33,6 +41,7 @@
                         'slide-up': 'slideUp 0.8s ease-out',
                         'scale-in': 'scaleIn 0.5s ease-out',
                         'spin-slow': 'spin 3s linear infinite',
+                        'glow': 'glow 2s ease-in-out infinite alternate',
                     },
                     keyframes: {
                         float: {
@@ -50,6 +59,10 @@
                         scaleIn: {
                             '0%': { transform: 'scale(0.9)', opacity: '0' },
                             '100%': { transform: 'scale(1)', opacity: '1' },
+                        },
+                        glow: {
+                            '0%': { boxShadow: '0 0 20px rgba(220, 38, 38, 0.5)' },
+                            '100%': { boxShadow: '0 0 30px rgba(220, 38, 38, 0.8)' },
                         },
                     }
                 }
@@ -116,8 +129,8 @@
         <div class="flex justify-between items-center h-16">
             <div class="flex items-center space-x-3">
                 <div
-                    class="w-10 h-10 bg-gradient-to-r from-primary to-secondary rounded-xl flex items-center justify-center shadow-lg">
-                    <i class="fas fa-spider text-white text-lg"></i>
+                    class="w-20 h-16  rounded-xl flex items-center justify-center ">
+                    <img src="images/logo.png" class="w-full h-full object-cover scale-125" alt="">
                 </div>
                 <span class="font-poppins font-bold text-xl text-gray-800">Spider Digi Yatra</span>
             </div>
@@ -271,8 +284,8 @@
         <div class="absolute inset-0 hero-pattern opacity-20"></div>
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <div class="text-center text-white animate-fade-in">
-                <h2 class="font-poppins font-bold text-4xl md:text-5xl mb-6">
-                    <i class="fas fa-gift mr-4 text-yellow-300"></i>FREE Digital Marketing Course
+                <h2 class="font-poppins font-bold text-3xl md:text-5xl mb-6">
+                    <i class="fas fa-gift mr-4 text-yellow-300"></i>FREE Digital Marketing Workshop
                 </h2>
                 <p class="text-xl mb-12 opacity-90 max-w-3xl mx-auto">
                     Get started with our comprehensive 1-hour Digital Marketing course - Absolutely FREE! No hidden
@@ -345,10 +358,10 @@
                     <p class="text-gray-600 mb-4 text-sm">Master photo editing and graphic design</p>
                     <div class="flex items-center justify-between">
                         <span class="text-primary font-semibold text-sm">Both Modes</span>
-                        <button class="text-primary hover:text-secondary transition-colors"
-                            onclick="openEnquiryModal()">
+                        <a href="coursefiles/adobe-photoshop.html" class="text-primary hover:text-secondary transition-colors"
+                            >
                             <i class="fas fa-arrow-right"></i>
-                        </button>
+                        </a>
                     </div>
                 </div>
 
@@ -362,10 +375,10 @@
                     <p class="text-gray-600 mb-4 text-sm">Professional video editing techniques</p>
                     <div class="flex items-center justify-between">
                         <span class="text-primary font-semibold text-sm">Both Modes</span>
-                        <button class="text-primary hover:text-secondary transition-colors"
-                            onclick="openEnquiryModal()">
+                        <a href="coursefiles/adobe-premier.html" class="text-primary hover:text-secondary transition-colors"
+                            >
                             <i class="fas fa-arrow-right"></i>
-                        </button>
+                        </a>
                     </div>
                 </div>
 
@@ -379,10 +392,10 @@
                     <p class="text-gray-600 mb-4 text-sm">Build brand presence across platforms</p>
                     <div class="flex items-center justify-between">
                         <span class="text-primary font-semibold text-sm">Both Modes</span>
-                        <button class="text-primary hover:text-secondary transition-colors"
-                            onclick="openEnquiryModal()">
+                        <a href="coursefiles/social-media-marketing.html" class="text-primary hover:text-secondary transition-colors"
+                            >
                             <i class="fas fa-arrow-right"></i>
-                        </button>
+                        </a>
                     </div>
                 </div>
 
@@ -396,10 +409,10 @@
                     <p class="text-gray-600 mb-4 text-sm">Facebook & Instagram advertising</p>
                     <div class="flex items-center justify-between">
                         <span class="text-primary font-semibold text-sm">Both Modes</span>
-                        <button class="text-primary hover:text-secondary transition-colors"
-                            onclick="openEnquiryModal()">
+                        <a href="coursefiles/meta-ads.html" class="text-primary hover:text-secondary transition-colors"
+                            >
                             <i class="fas fa-arrow-right"></i>
-                        </button>
+                        </a>
                     </div>
                 </div>
 
@@ -413,10 +426,10 @@
                     <p class="text-gray-600 mb-4 text-sm">Drive targeted traffic with Google ads</p>
                     <div class="flex items-center justify-between">
                         <span class="text-primary font-semibold text-sm">Both Modes</span>
-                        <button class="text-primary hover:text-secondary transition-colors"
-                            onclick="openEnquiryModal()">
+                        <a href="coursefiles/google-adword.html" class="text-primary hover:text-secondary transition-colors"
+                            >
                             <i class="fas fa-arrow-right"></i>
-                        </button>
+                        </a>
                     </div>
                 </div>
 
@@ -430,10 +443,10 @@
                     <p class="text-gray-600 mb-4 text-sm">Boost website rankings organically</p>
                     <div class="flex items-center justify-between">
                         <span class="text-primary font-semibold text-sm">Both Modes</span>
-                        <button class="text-primary hover:text-secondary transition-colors"
-                            onclick="openEnquiryModal()">
+                        <a class="text-primary hover:text-secondary transition-colors"
+                            >
                             <i class="fas fa-arrow-right"></i>
-                        </button>
+                        </a>
                     </div>
                 </div>
 
@@ -447,10 +460,10 @@
                     <p class="text-gray-600 mb-4 text-sm">Complete web applications</p>
                     <div class="flex items-center justify-between">
                         <span class="text-primary font-semibold text-sm">Both Modes</span>
-                        <button class="text-primary hover:text-secondary transition-colors"
-                            onclick="openEnquiryModal()">
+                        <a class="text-primary hover:text-secondary transition-colors"
+                            >
                             <i class="fas fa-arrow-right"></i>
-                        </button>
+                        </a>
                     </div>
                 </div>
 
@@ -464,10 +477,10 @@
                     <p class="text-gray-600 mb-4 text-sm">Deployment & infrastructure</p>
                     <div class="flex items-center justify-between">
                         <span class="text-primary font-semibold text-sm">Both Modes</span>
-                        <button class="text-primary hover:text-secondary transition-colors"
-                            onclick="openEnquiryModal()">
+                        <a class="text-primary hover:text-secondary transition-colors"
+                            >
                             <i class="fas fa-arrow-right"></i>
-                        </button>
+                        </a>
                     </div>
                 </div>
 
@@ -481,10 +494,10 @@
                     <p class="text-gray-600 mb-4 text-sm">Telecommunications technology</p>
                     <div class="flex items-center justify-between">
                         <span class="text-primary font-semibold text-sm">Both Modes</span>
-                        <button class="text-primary hover:text-secondary transition-colors"
-                            onclick="openEnquiryModal()">
+                        <a class="text-primary hover:text-secondary transition-colors"
+                            >
                             <i class="fas fa-arrow-right"></i>
-                        </button>
+                        </a>
                     </div>
                 </div>
 
@@ -498,10 +511,10 @@
                     <p class="text-gray-600 mb-4 text-sm">End to end talent acquisition</p>
                     <div class="flex items-center justify-between">
                         <span class="text-primary font-semibold text-sm">Both Modes</span>
-                        <button class="text-primary hover:text-secondary transition-colors"
-                            onclick="openEnquiryModal()">
+                        <a class="text-primary hover:text-secondary transition-colors"
+                            >
                             <i class="fas fa-arrow-right"></i>
-                        </button>
+                        </a>
                     </div>
                 </div>
 
@@ -515,10 +528,10 @@
                     <p class="text-gray-600 mb-4 text-sm">Leverage influencer partnerships</p>
                     <div class="flex items-center justify-between">
                         <span class="text-primary font-semibold text-sm">Both Modes</span>
-                        <button class="text-primary hover:text-secondary transition-colors"
-                            onclick="openEnquiryModal()">
+                        <a class="text-primary hover:text-secondary transition-colors"
+                            >
                             <i class="fas fa-arrow-right"></i>
-                        </button>
+                        </a>
                     </div>
                 </div>
             </div>
@@ -620,151 +633,151 @@
     </section>
 
     <!-- Contact Section -->
-    <section id="contact" class="py-20 bg-white">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16 animate-fade-in">
-                <h2 class="font-poppins font-bold text-4xl md:text-5xl text-gray-800 mb-6">
-                    Get in <span
-                        class="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">Touch</span>
-                </h2>
-                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
-                    Ready to start your digital journey? Contact us today and let's discuss how we can help you achieve
-                    your goals
-                </p>
-            </div>
+        <section id="contact" class="py-20 bg-white">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-16 animate-fade-in">
+                    <h2 class="font-poppins font-bold text-4xl md:text-5xl text-gray-800 mb-6">
+                        Get in <span
+                            class="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">Touch</span>
+                    </h2>
+                    <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                        Ready to start your digital journey? Contact us today and let's discuss how we can help you achieve
+                        your goals
+                    </p>
+                </div>
 
-            <div class="grid lg:grid-cols-2 gap-12">
-                <div class="animate-slide-up">
-                    <div
-                        class="bg-gradient-to-br from-primary to-secondary rounded-3xl p-8 text-white relative overflow-hidden">
-                        <div class="hero-pattern absolute inset-0 opacity-20"></div>
-                        <div class="relative z-10">
-                            <h3 class="font-poppins font-bold text-2xl mb-6">Contact Information</h3>
+                <div class="grid lg:grid-cols-2 gap-12">
+                    <div class="animate-slide-up">
+                        <div
+                            class="bg-gradient-to-br from-primary to-secondary rounded-3xl p-8 text-white relative overflow-hidden">
+                            <div class="hero-pattern absolute inset-0 opacity-20"></div>
+                            <div class="relative z-10">
+                                <h3 class="font-poppins font-bold text-2xl mb-6">Contact Information</h3>
 
-                            <div class="space-y-6">
-                                <div class="flex items-center space-x-4">
-                                    <div class="w-12 h-12 bg-white/20 rounded-lg flex items-center justify-center">
-                                        <i class="fas fa-phone text-white"></i>
+                                <div class="space-y-6">
+                                    <div class="flex items-center space-x-4">
+                                        <div class="w-12 h-12 bg-white/20 rounded-lg flex items-center justify-center">
+                                            <i class="fas fa-phone text-white"></i>
+                                        </div>
+                                        <div>
+                                            <p class="font-semibold">Phone</p>
+                                            <p class="opacity-90">+91 XXXXX XXXXX</p>
+                                        </div>
                                     </div>
-                                    <div>
-                                        <p class="font-semibold">Phone</p>
-                                        <p class="opacity-90">+91 XXXXX XXXXX</p>
+
+                                    <div class="flex items-center space-x-4">
+                                        <div class="w-12 h-12 bg-white/20 rounded-lg flex items-center justify-center">
+                                            <i class="fas fa-envelope text-white"></i>
+                                        </div>
+                                        <div>
+                                            <p class="font-semibold">Email</p>
+                                            <p class="opacity-90">info@spiderdigiyatra.com</p>
+                                        </div>
+                                    </div>
+
+                                    <div class="flex items-center space-x-4">
+                                        <div class="w-12 h-12 bg-white/20 rounded-lg flex items-center justify-center">
+                                            <i class="fas fa-map-marker-alt text-white"></i>
+                                        </div>
+                                        <div>
+                                            <p class="font-semibold">Address</p>
+                                            <p class="opacity-90">Your Address Here</p>
+                                        </div>
                                     </div>
                                 </div>
 
-                                <div class="flex items-center space-x-4">
-                                    <div class="w-12 h-12 bg-white/20 rounded-lg flex items-center justify-center">
-                                        <i class="fas fa-envelope text-white"></i>
+                                <div class="mt-8">
+                                    <h4 class="font-semibold mb-4">Follow Us</h4>
+                                    <div class="flex space-x-4">
+                                        <a href="#"
+                                            class="w-10 h-10 bg-white/20 rounded-lg flex items-center justify-center hover:bg-white/30 transition-colors">
+                                            <i class="fab fa-facebook text-white"></i>
+                                        </a>
+                                        <a href="#"
+                                            class="w-10 h-10 bg-white/20 rounded-lg flex items-center justify-center hover:bg-white/30 transition-colors">
+                                            <i class="fab fa-instagram text-white"></i>
+                                        </a>
+                                        <a href="#"
+                                            class="w-10 h-10 bg-white/20 rounded-lg flex items-center justify-center hover:bg-white/30 transition-colors">
+                                            <i class="fab fa-linkedin text-white"></i>
+                                        </a>
+                                        <a href="#"
+                                            class="w-10 h-10 bg-white/20 rounded-lg flex items-center justify-center hover:bg-white/30 transition-colors">
+                                            <i class="fab fa-youtube text-white"></i>
+                                        </a>
                                     </div>
-                                    <div>
-                                        <p class="font-semibold">Email</p>
-                                        <p class="opacity-90">info@spiderdigiyatra.com</p>
-                                    </div>
-                                </div>
-
-                                <div class="flex items-center space-x-4">
-                                    <div class="w-12 h-12 bg-white/20 rounded-lg flex items-center justify-center">
-                                        <i class="fas fa-map-marker-alt text-white"></i>
-                                    </div>
-                                    <div>
-                                        <p class="font-semibold">Address</p>
-                                        <p class="opacity-90">Your Address Here</p>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="mt-8">
-                                <h4 class="font-semibold mb-4">Follow Us</h4>
-                                <div class="flex space-x-4">
-                                    <a href="#"
-                                        class="w-10 h-10 bg-white/20 rounded-lg flex items-center justify-center hover:bg-white/30 transition-colors">
-                                        <i class="fab fa-facebook text-white"></i>
-                                    </a>
-                                    <a href="#"
-                                        class="w-10 h-10 bg-white/20 rounded-lg flex items-center justify-center hover:bg-white/30 transition-colors">
-                                        <i class="fab fa-instagram text-white"></i>
-                                    </a>
-                                    <a href="#"
-                                        class="w-10 h-10 bg-white/20 rounded-lg flex items-center justify-center hover:bg-white/30 transition-colors">
-                                        <i class="fab fa-linkedin text-white"></i>
-                                    </a>
-                                    <a href="#"
-                                        class="w-10 h-10 bg-white/20 rounded-lg flex items-center justify-center hover:bg-white/30 transition-colors">
-                                        <i class="fab fa-youtube text-white"></i>
-                                    </a>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
 
-                <div class="animate-scale-in">
-                    <form class="bg-gray-50 rounded-3xl p-8 border border-gray-100" action="send_email.php"
-                        method="POST">
-                        <h3 class="font-poppins font-bold text-2xl text-gray-800 mb-6">Send us a Message</h3>
+                    <div class="animate-scale-in">
+                        <form class="bg-gray-50 rounded-3xl p-8 border border-gray-100" action="send_email.php"
+                            method="POST">
+                            <h3 class="font-poppins font-bold text-2xl text-gray-800 mb-6">Send us a Message</h3>
 
-                        <div class="grid md:grid-cols-2 gap-6 mb-6">
-                            <div>
-                                <label class="block text-gray-700 font-semibold mb-2">First Name</label>
-                                <input type="text" name="first_name" required placeholder="Enter your first name"
+                            <div class="grid md:grid-cols-2 gap-6 mb-6">
+                                <div>
+                                    <label class="block text-gray-700 font-semibold mb-2">First Name</label>
+                                    <input type="text" name="first_name" required placeholder="Enter your first name"
+                                        class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all duration-300">
+                                </div>
+                                <div>
+                                    <label class="block text-gray-700 font-semibold mb-2">Last Name</label>
+                                    <input type="text" name="last_name" required placeholder="Enter your last name"
+                                        class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all duration-300">
+                                </div>
+                            </div>
+
+                            <div class="mb-6">
+                                <label class="block text-gray-700 font-semibold mb-2">Email</label>
+                                <input type="email" name="email" required placeholder="Enter your email address"
                                     class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all duration-300">
                             </div>
-                            <div>
-                                <label class="block text-gray-700 font-semibold mb-2">Last Name</label>
-                                <input type="text" name="last_name" required placeholder="Enter your last name"
+
+                            <div class="mb-6">
+                                <label class="block text-gray-700 font-semibold mb-2">Phone</label>
+                                <input type="tel" name="phone" required placeholder="Enter your phone number"
                                     class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all duration-300">
                             </div>
-                        </div>
 
-                        <div class="mb-6">
-                            <label class="block text-gray-700 font-semibold mb-2">Email</label>
-                            <input type="email" name="email" required placeholder="Enter your email address"
-                                class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all duration-300">
-                        </div>
+                            <div class="mb-6">
+                                <label class="block text-gray-700 font-semibold mb-2">Course Interest</label>
+                                <select name="course_interest" required
+                                    class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all duration-300">
+                                    <option value="">Select a course</option>
+                                    <option value="digital-marketing">Digital Marketing (FREE)</option>
+                                    <option value="photoshop">Adobe Photoshop</option>
+                                    <option value="premiere">Adobe Premiere</option>
+                                    <option value="social-media">Social Media Marketing</option>
+                                    <option value="meta-ads">Meta Ads</option>
+                                    <option value="google-ads">Google AdWords</option>
+                                    <option value="seo">Search Engine Optimization</option>
+                                    <option value="web-dev">Full Stack Web Development</option>
+                                    <option value="devops">DevOps</option>
+                                    <option value="telecom">Telecom</option>
+                                    <option value="recruitment">End to End Recruitment</option>
+                                    <option value="influencer">Influencer Marketing</option>
+                                    <option value="internship">Internship Opportunity</option>
+                                </select>
+                            </div>
 
-                        <div class="mb-6">
-                            <label class="block text-gray-700 font-semibold mb-2">Phone</label>
-                            <input type="tel" name="phone" required placeholder="Enter your phone number"
-                                class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all duration-300">
-                        </div>
+                            <div class="mb-6">
+                                <label class="block text-gray-700 font-semibold mb-2">Message</label>
+                                <textarea rows="4" name="message" required
+                                    placeholder="Tell us about your goals and how we can help..."
+                                    class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all duration-300"></textarea>
+                            </div>
 
-                        <div class="mb-6">
-                            <label class="block text-gray-700 font-semibold mb-2">Course Interest</label>
-                            <select name="course_interest" required
-                                class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all duration-300">
-                                <option value="">Select a course</option>
-                                <option value="digital-marketing">Digital Marketing (FREE)</option>
-                                <option value="photoshop">Adobe Photoshop</option>
-                                <option value="premiere">Adobe Premiere</option>
-                                <option value="social-media">Social Media Marketing</option>
-                                <option value="meta-ads">Meta Ads</option>
-                                <option value="google-ads">Google AdWords</option>
-                                <option value="seo">Search Engine Optimization</option>
-                                <option value="web-dev">Full Stack Web Development</option>
-                                <option value="devops">DevOps</option>
-                                <option value="telecom">Telecom</option>
-                                <option value="recruitment">End to End Recruitment</option>
-                                <option value="influencer">Influencer Marketing</option>
-                                <option value="internship">Internship Opportunity</option>
-                            </select>
-                        </div>
-
-                        <div class="mb-6">
-                            <label class="block text-gray-700 font-semibold mb-2">Message</label>
-                            <textarea rows="4" name="message" required
-                                placeholder="Tell us about your goals and how we can help..."
-                                class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all duration-300"></textarea>
-                        </div>
-
-                        <button type="submit"
-                            class="w-full bg-gradient-to-r from-primary to-secondary text-white py-4 rounded-lg text-lg font-semibold hover:shadow-xl transform hover:scale-105 transition-all duration-300">
-                            <i class="fas fa-paper-plane mr-2"></i>Send Message
-                        </button>
-                    </form>
+                            <button type="submit"
+                                class="w-full bg-gradient-to-r from-primary to-secondary text-white py-4 rounded-lg text-lg font-semibold hover:shadow-xl transform hover:scale-105 transition-all duration-300">
+                                <i class="fas fa-paper-plane mr-2"></i>Send Message
+                            </button>
+                        </form>
+                    </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
     <!-- Footer -->
     <footer class="bg-dark text-white py-12">

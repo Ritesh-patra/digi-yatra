@@ -1,9 +1,10 @@
 <?php
 use PHPMailer\PHPMailer\PHPMailer;
-use PHPMailer\PHPMailer\SMTP;
 use PHPMailer\PHPMailer\Exception;
 
-require 'vendor/autoload.php';
+require '../mailer/Exception.php';
+require '../mailer/PHPMailer.php';
+require '../mailer/SMTP.php';
 
 if ($_POST) {
     $first_name = htmlspecialchars($_POST['first_name']);
@@ -12,28 +13,33 @@ if ($_POST) {
     $phone = htmlspecialchars($_POST['phone']);
     $course_interest = htmlspecialchars($_POST['course_interest']);
     $message = htmlspecialchars($_POST['message']);
-    
+
     $mail = new PHPMailer(true);
-    
+
     try {
         // Server settings
         $mail->isSMTP();
-        $mail->Host       = 'smtp.gmail.com'; // Set your SMTP server
-        $mail->SMTPAuth   = true;
-        $mail->Username   = 'your-email@gmail.com'; // Your email
-        $mail->Password   = 'your-app-password'; // Your app password
+        $mail->Host = 'smtp.gmail.com';
+        $mail->SMTPAuth = true;
+        $mail->Username = 'patrasagarika654@gmail.com'; // ✅ Tumhara Gmail
+        $mail->Password = 'ouzw ppwk ofee bpny'; // 🔒 Yaha tum apna app password dalna (NOT Gmail login password)
         $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
-        $mail->Port       = 587;
-        
-        // Recipients
-        $mail->setFrom('your-email@gmail.com', 'Spider Digi Yatra');
-        $mail->addAddress('info@spiderdigiyatra.com', 'Spider Digi Yatra'); // Add recipient
+        $mail->Port = 587;
+
+        // From: Yahi email se mail jayega
+        $mail->setFrom('patrasagarika654@gmail.com', 'Spider Digi Yatra');
+
+        // To: Tumhare business/official inbox me mail milega
+        // $mail->addAddress('info@spiderdigiyatra.com', 'Spider Digi Yatra');
+
+        // Reply-To: Yeh user ka email hoga jo form me bharega
         $mail->addReplyTo($email, $first_name . ' ' . $last_name);
-        
+
+
         // Content
         $mail->isHTML(true);
         $mail->Subject = 'New Contact Form Submission - Spider Digi Yatra';
-        
+
         $mail->Body = "
         <html>
         <head>
@@ -81,33 +87,33 @@ if ($_POST) {
             </div>
         </body>
         </html>";
-        
+
         $mail->AltBody = "New Contact Form Submission\n\n" .
-                        "Name: {$first_name} {$last_name}\n" .
-                        "Email: {$email}\n" .
-                        "Phone: {$phone}\n" .
-                        "Course Interest: {$course_interest}\n" .
-                        "Message: {$message}\n" .
-                        "Submitted On: " . date('Y-m-d H:i:s');
-        
+            "Name: {$first_name} {$last_name}\n" .
+            "Email: {$email}\n" .
+            "Phone: {$phone}\n" .
+            "Course Interest: {$course_interest}\n" .
+            "Message: {$message}\n" .
+            "Submitted On: " . date('Y-m-d H:i:s');
+
         $mail->send();
-        
+
         // Send auto-reply to user
         $autoReply = new PHPMailer(true);
         $autoReply->isSMTP();
-        $autoReply->Host       = 'smtp.gmail.com';
-        $autoReply->SMTPAuth   = true;
-        $autoReply->Username   = 'your-email@gmail.com';
-        $autoReply->Password   = 'your-app-password';
+        $autoReply->Host = 'smtp.gmail.com';
+        $autoReply->SMTPAuth = true;
+        $autoReply->Username = 'patrasagarika654@gmail.com';
+        $autoReply->Password = 'ouzw ppwk ofee bpny';
         $autoReply->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
-        $autoReply->Port       = 587;
-        
-        $autoReply->setFrom('your-email@gmail.com', 'Spider Digi Yatra');
+        $autoReply->Port = 587;
+
+        $autoReply->setFrom('patrasagarika654@gmail.com', 'Spider Digi Yatra');
         $autoReply->addAddress($email, $first_name . ' ' . $last_name);
-        
+
         $autoReply->isHTML(true);
         $autoReply->Subject = 'Thank you for contacting Spider Digi Yatra!';
-        
+
         $autoReply->Body = "
         <html>
         <head>
@@ -150,23 +156,22 @@ if ($_POST) {
                     
                     <div class='footer'>
                         <p>Follow us on social media for daily tips and updates!</p>
-                        <p>📧 info@spiderdigiyatra.com | 📞 +91 XXXXX XXXXX</p>
+                        <p>📧 info@spiderdigiyatra.com | 📞 +91 93</p>
                     </div>
                 </div>
             </div>
         </body>
         </html>";
-        
+
         $autoReply->send();
-        
+
         echo "<script>
                 alert('Thank you! Your message has been sent successfully. We will contact you soon.');
                 window.location.href = 'index.html';
               </script>";
-        
+
     } catch (Exception $e) {
         echo "<script>
-                alert('Sorry, there was an error sending your message. Please try again or call us directly.');
                 window.location.href = 'index.html';
               </script>";
     }
